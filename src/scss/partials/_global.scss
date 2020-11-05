@@ -1,0 +1,86 @@
+// Root font size
+:root {
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 16px;
+    font-family: $font-family--primary;
+    font-weight: normal;
+    line-height: normal;
+    color: color(text);
+    overflow-x: hidden;
+    background-color: color(light-gray);
+    padding-top: 80px;
+
+    @include bp(sm) {
+        padding-top: 115px;
+    }
+}
+
+h1 {
+    font-family: $font-family--heading;
+    font-size: rem(28);
+    line-height: 120%;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+
+    @include bp(lg) {
+        font-size: rem(40);
+    }
+}
+
+h2 {
+    font-family: $font-family--heading;
+    font-size: rem(22);
+    line-height: 120%;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+
+    @include bp(lg) {
+        font-size: rem(28);
+    }
+}
+
+h3 {
+    font-family: $font-family--heading;
+    font-size: rem(24);
+    line-height: 120%;
+    font-weight: bold;
+    font-style: normal;
+    margin: 0;
+}
+
+p {
+    font-family: $font-family--primary;
+    font-size: rem(16);
+    line-height: 140%;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+
+    @include bp(lg) {
+        font-size: rem(20);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.underline {
+    text-decoration: underline;
+}

@@ -1,0 +1,21 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": ["airbnb/base"],
+    "parser": "babel-eslint",
+    "rules": {
+        "indent": ["warn", 4],
+        "eol-last": "off",
+        "max-len": "off",
+        "comma-dangle": ["error", "never"],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "linebreak-style": "off"
+    },
+    "globals": {
+        "dataLayer": true
+    }
+}

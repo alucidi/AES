@@ -1,0 +1,21 @@
+include ../../mixins/svg-icon.pug
+
+mixin introImageText(props = {})
+    -
+        var headline = props.headline ? props.headline : 'Get Started with Tickets to Work';
+        var subheadline = props.subheadline ? props.subheadline : 'We&apos;ll Help For <b>Free</b>';
+        var copy = props.copy ? props.copy : 'Ticket to Work is a free benefit of the SSDI program, but can be complex and confusing. Fortunately, you don’t have to navigate it on your own. If you’re receiving SSDI and want to try working again, we’re ready to help, at <b>no cost to you.</b>';
+        var image = props.image ? props.image : 'lady-1'
+        var headlineContainerClass = props.headlineContainerClass ? props.headlineContainerClass : '';
+    section.intro-image-text
+        .container--small
+            .intro-image-text__wrapper
+                .intro-image-text__info(class=headlineContainerClass)
+                    .intro-image-text__info__inner
+                        h1.intro-image-text__header !{headline}
+                        .intro-image-text__subheader !{subheadline}
+                        .intro-image-text__copy
+                            p !{copy}
+                .intro-image-text__image
+                    .intro-image-text__image__wrapper
+                        +svg-icon(image)

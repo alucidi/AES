@@ -1,0 +1,22 @@
+extends ./global/layout.pug
+
+include ./components/header/header.pug
+include ./components/footer/footer.pug
+
+block vars
+    -
+        var title = 'Request a Call';
+        var description = '';
+
+block header
+    +header({
+        showRequestCall: false
+    })
+
+block content
+    include ./components/form/form.pug
+
+block footer
+    +footer({
+        showRequestCall: false
+    })

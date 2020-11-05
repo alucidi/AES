@@ -1,0 +1,12 @@
+include ../button/button.pug
+
+mixin header(props={})
+    header.header
+        .header__container.container--small
+            .header__logo
+                include ../../svg/aes.pug
+            .header__phone
+                +button({
+                    showHours: true,
+                    showRequestCall: props.showRequestCall
+                })

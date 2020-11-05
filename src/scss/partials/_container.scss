@@ -1,0 +1,75 @@
+@mixin container($container) {
+    @if (type-of($container) == 'map') {
+        @each $break, $_value in $value {
+            @if ($break == 'default') {
+                #{$property}: #{$value};
+            }
+            @else {
+                @include bp($break) {
+                    #{$property}: #{$value};
+                }
+            }
+        }
+    }
+    @else {
+        #{$property}: #{$value};
+    }
+
+    @if (map-has-key($base-style, #{$type})) {
+        @each $property, $value in map-get($base-style, #{$type}) {
+            @include expandSetting($property, $value);
+        }
+    }
+}
+
+@mixin expandSetting($property, $setting) {
+    @if (type-of($setting) == 'map') {
+        @each $break, $_value in $setting {
+            @if ($break == 'default') {
+                #{$property}: #{$_value};
+            }
+            @else {
+                @include bp($break) {
+                    #{$property}: #{$_value};
+                }
+            }
+        }
+    }
+    @else {
+        #{$property}: #{$setting};
+    }
+}
+
+.container {
+    margin: 0 auto;
+
+    @each $break, $value in map-get($container, gutter) {
+        @if ($break == 'default') {
+            padding: 0 #{$value};
+        }
+        @else {
+            @include bp($break) {
+                padding: 0 #{$value};
+            }
+        }
+    }
+
+    @include expandSetting('width', map-get($container, width));
+}
+
+.container--small {
+    margin: 0 auto;
+
+    @each $break, $value in map-get($container, container-small-gutter) {
+        @if ($break == 'default') {
+            padding: 0 #{$value};
+        }
+        @else {
+            @include bp($break) {
+                padding: 0 #{$value};
+            }
+        }
+    }
+
+    @include expandSetting('width', map-get($container, container-small-width));
+}

@@ -1,0 +1,32 @@
+include ../button/button.pug
+include ../../mixins/svg-icon.pug
+
+mixin card(props={})
+    -
+        var cardClass = props.index ? 'card--number' : '';
+        cardClass = props.type ? cardClass + ' card--' + props.type : cardClass;
+    li.glide__slide.card(class=cardClass)
+        if props.heading && props.summary
+            .card__copy
+                if props.index
+                    .card__number!= props.index
+                h3.card__heading!= props.heading
+                .card__summary!= props.summary
+                if props.bottomCopy
+                    .card__bottom-copy!= props.bottomCopy
+                if props.showPhone
+                    .card__phone
+                        +button({
+                            color: props.buttonColor ? props.buttonColor : 'blue',
+                            showHours: true,
+                            showRequestCall: props.showRequestCall
+                        })
+        if props.image
+            .card__image
+                picture
+                    source(data-srcset=props.image + '.webp' type='image/webp')
+                    source(data-srcset=props.image + '.png' type='image/png')
+                    img.lazyload(width='242', height='91', data-src=props.image + '.png', alt=props.imageAlt)
+        if props.svg
+            .card__svg
+                +svg-icon(props.svg)

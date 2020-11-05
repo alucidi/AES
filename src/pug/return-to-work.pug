@@ -1,0 +1,107 @@
+extends ./global/layout.pug
+
+include ./components/header/header.pug
+include ./components/intro-image-text/intro-image-text.pug
+include ./components/ticket-banner/ticket-banner.pug
+include ./components/benefits/benefits.pug
+include ./components/image-callout/image-callout.pug
+include ./components/steps/steps.pug
+include ./components/about-us/about-us.pug
+include ./components/footer/footer.pug
+
+block vars
+    -
+        var title = 'Return to Work and Keep Your SSDI Benefits';
+        var description = '';
+
+block header
+    +header({
+        showRequestCall: true
+    })
+
+block content
+    +introImageText({
+        headline: 'Return To Work <em>and</em> Keep Your SSDI Benefits',
+        subheadline: 'We&apos;ll Help For <strong>Free</strong>',
+        copy: 'If you’re currently receiving Social Security Disability Insurance (SSDI), you can protect your benefits after going back to work. It’s called the Ticket to Work program, and our experts can help you get started right away.',
+        image: 'man-2'
+    })
+    +ticketBanner({
+        image: './images/ticket-to-work-color',
+        imageAlt: 'Ticket to Work Logo'
+    })
+    +benefits({
+        heading: 'Ticket to Work Benefits',
+        summary: 'Beyond maintaining your SSDI benefits while you work, the Ticket to Work program allows you to:',
+        cards: [
+            {
+                heading: 'Earn Any Amount',
+                summary: 'Make as much money as you want in year 1 and protect your full SSDI benefits.'
+            },
+            {
+                heading: 'Stress Less',
+                summary: 'Going back to work with our help means no more Continuing Disability Reviews.'
+            },
+            {
+                heading: 'Keep Medicare',
+                summary: 'While working, you can stay on Medicare for up to 93 months.'
+            },
+            {
+                heading: 'Avoid Risk',
+                summary: 'If you stop working anytime within 9 years, your SSDI benefits are protected.'
+            },
+            {
+                heading: 'Pay Nothing',
+                summary: 'As an Employment Network, our services are provided at no cost.'
+            },
+            {
+                type: 'image',
+                image: './images/ticket-to-work-color',
+                imageAlt: 'Ticket to Work Logo'
+            }
+        ],
+    })
+    +imageCallout()
+    +steps({
+        logo: './images/ticket-to-work-white',
+        heading: 'Ticket to Work in 5 Steps',
+        summary: 'We’re here for you, from our first contact by phone to that first day back at work – and beyond.',
+        cards: [
+            {
+                heading: 'We create your Individual Work Plan',
+                summary: 'This is your roadmap for returning to work that we complete and you review and sign. It includes work history, job type, employment goals and more.'
+            },
+            {
+                heading: 'We assign your Ticket to Work',
+                summary: 'Once your Individual Work Plan is completed and signed, we use the SSA’s Ticket to Work portal to assign your ticket.'
+            },
+            {
+                heading: 'We help you explore work options',
+                summary: 'If you’d like help searching for a job, we offer coaching and support to assist you in matching your work experience, talent and skills with current opportunities. We also provide resume-building tips, links to job search websites and more.'
+            },
+            {
+                heading: 'We check in to help you stay on track and avoid problems',
+                summary: 'While you’re searching for a job, we’ll check in regularly and provide support. Once you’re working, we’ll help by reporting your earnings information and communicating with the SSA for you.'
+            },
+            {
+                type: 'big',
+                heading: 'You focus on work and enjoy benefits protection',
+                summary: 'We’ll support you for up to 9 years, and help ensure that you get SSDI and Medicare benefit protection through the Ticket to Work program.',
+                svg: 'lady-2',
+                bottomCopy: 'Ready to get the most out of Ticket to Work?<br>Put Allsup Employment Services to work for you.',
+                showPhone: true,
+                buttonColor: 'purple',
+                showRequestCall: true
+            }
+        ],
+        bottomCopy: 'Ready to get the most out of Ticket to Work? Put Allsup Employment Services to work for you.'
+    })
+    +aboutUs({
+        image: './svg/business-characters.svg',
+        imageAlt: 'Business people'
+    })
+
+block footer
+    +footer({
+        showRequestCall: true
+    })

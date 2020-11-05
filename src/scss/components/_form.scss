@@ -1,0 +1,136 @@
+.form {
+    @include bp(sm) {
+        margin: 90px 0;
+    }
+
+    @include bp(lg) {
+        margin-top: 100px;
+    }
+
+    &__container {
+        background-color: color(white);
+        padding: 62px 20px 50px;
+        margin: 0 -20px;
+
+        @include bp(sm) {
+            padding: 65px 80px 55px;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 810px;
+            border-radius: 10px;
+        }
+    }
+
+    .hbspt-form {
+        fieldset {
+            max-width: none;
+        }
+
+        .inputs-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        // form heading
+        h2 {
+            font-family: $font-family--heading;
+            font-style: normal;
+            font-weight: bold;
+            font-size: rem(28);
+            line-height: 120%;
+            letter-spacing: -1.2px;
+            color: color(text);
+            margin-bottom: 40px;
+        }
+
+        .hs-form-field.hs-fieldtype-text {
+            position: relative;
+            margin-top: 10px;
+
+            label:not(.hs-error-msg) {
+                font-family: $font-family--heading;
+                font-style: normal;
+                font-weight: normal;
+                font-size: rem(16);
+                line-height: 120%;
+                letter-spacing: -1.2px;
+                color: color(text);
+                margin-left: 20px;
+            }
+        }
+
+        // input fields
+        .hs-input[type="text"],
+        .hs-input[type="tel"],
+        .hs-input[type="email"] {
+            border: 1px solid color(black);
+            border-radius: 27.5px;
+            height: 44px;
+            padding: 5px 20px;
+            width: 95%;
+            max-width: 300px;
+        }
+
+        // checkboxes
+        .hs-form-booleancheckbox-display {
+            display: flex;
+
+            .hs-input[type="checkbox"] {
+                margin-right: 16px;
+                margin-top: 3px;
+            }
+
+            span {
+                font-family: $font-family--heading;
+                font-style: normal;
+                font-weight: normal;
+                font-size: rem(16);
+                line-height: 120%;
+                color: color(black);
+            }
+        }
+
+        .hs-form-booleancheckbox {
+            margin-top: 40px;
+        }
+
+        // error messages
+        .hs-error-msg {
+            font-family: $font-family--heading;
+            font-size: rem(16);
+            line-height: 120%;
+            color: color(red);
+            margin: 5px 0 0 20px;
+            display: block;
+        }
+
+        // submit button
+        .hs-button[type="submit"] {
+            @include button();
+            background: gradient(purple-button-gradient);
+            color: color(white);
+            font-size: rem(20);
+            line-height: 34px;
+            margin-top: 40px;
+            width: 95%;
+
+            @include bp(sm) {
+                width: 100%;
+                max-width: 282px;
+            }
+        }
+
+        // Success message
+        .submitted-message,
+        .submitted-message p {
+            font-family: $font-family--heading;
+            font-style: normal;
+            font-weight: bold;
+            font-size: rem(28);
+            line-height: 120%;
+            letter-spacing: -1.2px;
+            color: color(text);
+        }
+    }
+}

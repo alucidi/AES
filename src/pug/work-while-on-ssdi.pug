@@ -1,0 +1,72 @@
+extends ./global/layout.pug
+
+include ./components/header/header.pug
+include ./components/intro-image-text/intro-image-text.pug
+include ./components/ticket-banner/ticket-banner.pug
+include ./components/benefits/benefits.pug
+include ./components/image-callout/image-callout.pug
+include ./components/about-us/about-us.pug
+include ./components/footer/footer.pug
+
+block vars
+    -
+        var title = 'Keep Your SSDI Benefits While You Work';
+        var description = '';
+
+block header
+    +header({
+        showRequestCall: true
+    })
+
+block content
+    +introImageText({
+        headline: 'Keep Your SSDI Benefits <em>While You Work Full Time</em>',
+        subheadline: 'We&apos;ll Help For <strong>Free</strong>',
+        copy: 'If you’re currently receiving Social Security Disability Insurance (SSDI), you can protect your benefits while working. It’s called the Ticket to Work program (TTW), and our experts can help you get started.<br /><br />Through TTW, you can earn much more money from working than from SSDI benefits alone. Plus you can work for a certain time and receive both your work earnings and SSDI and avoid Continuing Disability Reviews.',
+        image: 'lady-2'
+    })
+    +ticketBanner({
+        image: './images/ticket-to-work-color',
+        imageAlt: 'Ticket to Work Logo'
+    })
+    +benefits({
+        heading: 'Ticket to Work Benefits',
+        summary: 'Beyond maintaining your SSDI benefits while you work, the Ticket to Work program allows you to:',
+        cards: [
+            {
+                heading: 'Earn Any Amount',
+                summary: 'Make as much money as you want in year 1 and protect your full SSDI benefits.'
+            },
+            {
+                heading: 'Stress Less',
+                summary: 'Going back to work with our help means no more Continuing Disability Reviews.'
+            },
+            {
+                heading: 'Keep Medicare',
+                summary: 'While working, you can stay on Medicare for up to 93 months.'
+            },
+            {
+                heading: 'Avoid Risk',
+                summary: 'If you stop working anytime within 9 years, your SSDI benefits are protected.'
+            },
+            {
+                heading: 'Pay Nothing',
+                summary: 'As an Employment Network, our services are provided at no cost.'
+            },
+            {
+                type: 'image',
+                image: './images/ticket-to-work-color',
+                imageAlt: 'Ticket to Work Logo'
+            }
+        ],
+    })
+    +imageCallout()
+    +aboutUs({
+        image: './svg/business-characters.svg',
+        imageAlt: 'Business people'
+    })
+
+block footer
+    +footer({
+        showRequestCall: true
+    })

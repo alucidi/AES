@@ -1,0 +1,11 @@
+// Font root
+$font-root: '../fonts/' !default;
+
+/**
+ * Import Fonts like Google fonts
+ *
+ * This mixing will go through all the $font-imports array located in the settings.scss file
+ */
+@each $font in $font-imports {
+    @import url($font);
+}

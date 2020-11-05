@@ -1,0 +1,46 @@
+include ../button/button.pug
+
+mixin imageCallout(props = {})
+    section.image-callout
+        .image-callout__container
+            .image-callout__info
+                h2.image-callout__info__header Enjoy Helpful Guidance and Support at Every Step
+                .image-callout__info__text Ticket to Work is one of the benefits of the SSDI program, available exclusively to disability beneficiaries. It can be complex and confusing, but you don’t have to navigate it on your own.
+                .image-callout__ticket-text With Ticket to Work, we assist you by:
+            .image-callout__wrapper
+                .image-callout__grid
+                    .image-callout__col
+                        div
+                            .image-callout__card
+                                .image-callout__card__image
+                                    .image-callout__card__image__wrapper
+                                        include ../../svg/safe.pug
+                                .image-callout__card__copy Keeping your SSDI benefits safe as you work
+                    .image-callout__col
+                        div
+                            .image-callout__card
+                                .image-callout__card__image
+                                    .image-callout__card__image__wrapper
+                                        include ../../svg/communicate.pug
+                                .image-callout__card__copy Communicating with the SSA for you
+                    .image-callout__col
+                        div
+                            .image-callout__card
+                                .image-callout__card__image
+                                    .image-callout__card__image__wrapper
+                                        include ../../svg/forms.pug
+                                .image-callout__card__copy Managing all TTW paperwork
+                    .image-callout__col
+                        div
+                            .image-callout__card
+                                .image-callout__card__image
+                                    .image-callout__card__image__wrapper
+                                        include ../../svg/handshake.pug
+                                .image-callout__card__copy Providing job coaching &amp; support
+                .image-callout__cta-container
+                    +button({
+                        heading: 'Call today:',
+                        showHours: true,
+                        color: 'purple',
+                        showRequestCall: true
+                    })

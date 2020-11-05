@@ -1,0 +1,127 @@
+.image-callout {
+    margin-top: 90px;
+
+    @include bp(lg) {
+        margin-top: 100px;
+    }
+
+    &__container {
+        background-color: color(white);
+        padding: 0 20px;
+        margin: 0 auto;
+        width: 100%;
+
+        @include bp(lg) {
+            max-width: 1224px;
+            padding: 0;
+            border-radius: 10px;
+        }
+    }
+
+    &__info {
+        padding-top: 48px;
+        margin-bottom: 24px;
+
+        @include bp(lg) {
+            padding: 48px 66px 0;
+        }
+
+        &__header {
+            margin-bottom: 24px;
+        }
+
+        &__text {
+            margin-bottom: 24px;
+            max-width: 900px;
+        }
+    }
+
+    &__ticket-text {
+        font-size: rem(16);
+        line-height: 28px;
+        font-weight: bold;
+
+        @include bp(lg) {
+            font-size: rem(20);
+        }
+    }
+
+    &__grid {
+        @include flexGrid(30px);
+
+        @include bp(sm) {
+            @include flexGrid(44px);
+        }
+
+        @include bp(lg) {
+            @include flexGrid(64px);
+        }
+    }
+
+    &__col {
+        @include flexGridItem(30px, 2);
+
+        @include bp(sm) {
+            @include flexGridItem(44px, 4);
+        }
+
+        @include bp(lg) {
+            @include flexGridItem(64px, 4);
+        }
+    }
+
+    &__wrapper {
+        padding: 40px 20px;
+
+        @include bp(lg) {
+            padding: 66px;
+            padding-bottom: 22px;
+        }
+    }
+
+    &__card {
+        &__image {
+            margin-bottom: 12px;
+
+            @include bp(lg) {
+                margin-bottom: 22px;
+                // width: 195px;
+            }
+
+            svg {
+                width: 100%;
+
+                @include bp(max-width md) {
+                    height: auto;
+                }
+            }
+        }
+
+        &__copy {
+            text-align: center;
+            font-weight: normal;
+
+            @include bp(max-width lg) {
+                font-size: rem(14);
+                line-height: 20px;
+            }
+
+            @include bp(lg) {
+                max-width: 200px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    &__cta-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 30px;
+
+        @include bp(lg) {
+            padding-top: 70px;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+extends ./global/layout.pug
+
+block vars
+    -
+        var title = 'AES Landing Pages';
+        var description = '';
+
+block content
+    .container
+        h1 AES Landing Pages (Development URLs)
+        ul
+            li
+                a(href='/ticket-to-work.html') Get Started with Ticket to Work
+            li
+                a(href='/return-to-work.html') Return to Work and Keep Your SSDI Benefits
+            li
+                a(href='/work-while-on-ssdi.html') Keep Your SSDI Benefits While You Work
+            li
+                a(href='/request-a-call.html') Request a Call
+
+        h1 AES Landing Pages (Production URLs)
+        ul
+            li
+                a(href='/ticket-to-work/') Get Started with Ticket to Work
+            li
+                a(href='/return-to-work/') Return to Work and Keep Your SSDI Benefits
+            li
+                a(href='/work-while-on-ssdi/') Keep Your SSDI Benefits While You Work
+            li
+                a(href='/request-a-call/') Request a Call

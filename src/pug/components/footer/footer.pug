@@ -1,0 +1,20 @@
+include ../button/button.pug
+
+mixin footer(props={})
+    -
+        var phoneClass = props.showRequestCall ? '' : 'footer__phone--no-request-call';
+
+    footer.footer
+        .container--small
+            .footer__top-section
+                .footer__phone(class=phoneClass)
+                    +button({
+                        showHours: true,
+                        showRequestCall: props.showRequestCall
+                    })
+                .footer__logo
+                    include ../../svg/aes-white.pug
+            .footer__copyright
+                | &copy; Copyright 1996 - 2020 | Allsup, LLC | All Rights Reserved | Allsup Employment Services is a wholly owned subsidiary of Allsup, LLC | 
+                a(href='tel:1-800-525-5787') (800) 525-5787
+

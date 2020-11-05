@@ -1,0 +1,85 @@
+.benefits {
+    background: gradient(purple-bg-gradient);
+    padding: 40px 0 38px;
+
+    @include bp(sm) {
+        padding: 62px 0 38px;
+    }
+
+    @include bp(lg) {
+        padding: 64px 0 69px;
+    }
+
+    &__heading {
+        font-family: $font-family--heading;
+        font-weight: bold;
+        font-size: rem(28);
+        line-height: 120%;
+        letter-spacing: -1.2px;
+        color: color(white);
+        margin: 32px 0 0;
+
+        @include bp(sm) {
+            font-size: rem(49);
+            line-height: 48px;
+            margin: 40px 0 0;
+        }
+
+        @include bp(lg) {
+            margin: 0;
+        }
+    }
+
+    &__summary {
+        font-family: $font-family--primary;
+        font-size: rem(16);
+        line-height: 140%;
+        color: color(white);
+        margin: 8px 0 0;
+
+        @include bp(sm) {
+            font-size: rem(20);
+            line-height: 28px;
+            margin: 16px 0 0;
+        }
+
+        @include bp(lg) {
+            width: 100%;
+            max-width: 512px;
+        }
+    }
+
+    &__cards {
+        margin-top: 32px;
+
+        @include bp(sm) {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -32px;
+        }
+
+        @include bp(lg) {
+            margin-top: 50px;
+            margin-right: -48px;
+        }
+
+        .card {
+            @include bp(lg) {
+                padding: 48px 32px 45px;
+            }
+
+            &__heading {
+                @include bp(lg) {
+                    font-size: rem(32);
+                }
+            }
+
+            &__summary {
+                @include bp(lg) {
+                    font-size: rem(21);
+                }
+            }
+        }
+    }
+}

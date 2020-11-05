@@ -1,0 +1,19 @@
+mixin button(props = {})
+    -
+        var copy = props.copy ? props.copy : '800-525-5787';
+        var hours = props.hours ? props.hours : 'MON. – FRI., 7 AM – 6 PM CT';
+        var color = props.color ? ' btn--' + props.color : ' btn--blue';
+        var wrapperClass = props.showRequestCall ? 'btn__wrapper' : '';
+
+    .btn__container
+        if props.heading
+            .btn__heading!= props.heading
+        div(class=wrapperClass)
+            a(href='tel:1-' + copy class='btn' + color)
+                span.btn__svg(aria-hidden='true')
+                    include ../../svg/phone.pug
+                span.btn__copy!= copy
+            if props.showRequestCall
+                a.btn__request-call(href='/request-a-call/') or Request a Call
+        if props.showHours
+            .btn__hours!= hours

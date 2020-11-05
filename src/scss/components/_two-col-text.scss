@@ -1,0 +1,56 @@
+.two-col-text {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+
+        @include bp(sm) {
+            flex-direction: row;
+        }
+    }
+
+    &__col {
+        @include bp(lg) {
+            font-size: rem(20);
+            line-height: 28px;
+        }
+        flex: 1 0 50%;
+
+        &:first-child {
+            margin-bottom: 30px;
+
+            @include bp(sm) {
+                margin-right: 10px;
+                margin-bottom: 0;
+            }
+
+            @include bp(lg) {
+                margin-right: 30px;
+            }
+        }
+
+        &:last-child {
+            @include bp(sm) {
+                margin-left: 10px;
+            }
+
+            @include bp(lg) {
+                margin-left: 30px;
+            }
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__divider {
+        width: 135px;
+        height: 1px;
+        background-color: #9C9C9C;
+        margin-bottom: 32px;
+
+        @include bp(lg) {
+            margin-bottom: 60px;
+        }
+    }
+}

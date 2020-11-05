@@ -1,0 +1,3 @@
+mixin skipNav(props = {})
+    aside.skip-navigation
+        a.sr-only.sr-only-focusable.skip-navigation__link(href=props.id)!= props.copy

@@ -1,0 +1,118 @@
+.steps {
+    background: gradient(blue-bg-gradient);
+    padding: 40px 0 38px;
+    margin-top: 90px;
+
+    @include bp(sm) {
+        padding: 62px 0 38px;
+    }
+
+    @include bp(lg) {
+        padding: 64px 0 69px;
+        margin-top: 120px;
+    }
+
+    &__top {
+        @include bp(lg) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__copy {
+        @include bp(lg) {
+            order: 1;
+        }
+    }
+
+    &__logo {
+        @include bp(lg) {
+            order: 2;
+        }
+
+        img {
+            width: 175px;
+            height: auto;
+
+            @include bp(sm) {
+                width: 242px;
+            }
+        }
+    }
+
+    &__heading {
+        font-family: $font-family--heading;
+        font-weight: bold;
+        font-size: rem(28);
+        line-height: 120%;
+        letter-spacing: -1.2px;
+        color: color(white);
+        margin: 32px 0 0;
+
+        @include bp(sm) {
+            font-size: rem(49);
+            line-height: 48px;
+            margin: 40px 0 0;
+        }
+
+        @include bp(lg) {
+            margin: 0;
+        }
+    }
+
+    &__summary {
+        font-family: $font-family--primary;
+        font-size: rem(16);
+        line-height: 140%;
+        color: color(white);
+        margin: 8px 0 0;
+
+        @include bp(sm) {
+            font-size: rem(20);
+            line-height: 28px;
+            margin: 16px 0 0;
+        }
+
+        @include bp(lg) {
+            width: 100%;
+            max-width: 512px;
+        }
+    }
+
+    &__cards {
+        margin-top: 32px;
+
+        @include bp(sm) {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -32px;
+        }
+
+        @include bp(lg) {
+            margin-top: 50px;
+            margin-right: -48px;
+        }
+    }
+
+    &__bottom-copy {
+        font-family: $font-family--primary;
+        font-weight: bold;
+        font-size: rem(16);
+        line-height: 140%;
+        color: color(white);
+        margin-top: 34px;
+
+        @include bp(sm) {
+            display: none;
+        }
+    }
+
+    &__phone {
+        margin-top: 24px;
+
+        @include bp(sm) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+mixin ticketBanner(props = {})
+    section.ticket-banner
+        .container--small.ticket-banner__container
+            .ticket-banner__inner
+                .ticket-banner__image
+                    picture
+                        source(data-srcset=props.image + '.webp' type='image/webp')
+                        source(data-srcset=props.image + '.png' type='image/png')
+                        img.lazyload(width='314', height='118', data-src=props.image + '.png', alt=props.imageAlt)
+                .ticket-banner__copy
+                    h2.ticket-banner__header What is Ticket to Work?
+                    .ticket-banner__info
+                        p Ticket to Work is a program from the Social Security Administration that protects your benefits while you try working again. When you’re receiving SSDI, you’re automatically eligible for Ticket to Work. To take full advantage of the program, you have to use an Employment Network like us.

@@ -1,0 +1,25 @@
+include ../card/card.pug
+
+mixin benefits(props = {})
+    section.benefits
+        .container--small
+            h2.benefits__heading!= props.heading
+            .benefits__summary!= props.summary
+            .benefits__cards.glide
+                .glide__track(data-glide-el='track')
+                    ul.glide__slides
+                        each cardItem, index in props.cards
+                            //- li.glide__slide
+                            +card(cardItem)
+                .glide__arrows(data-glide-el='controls')
+                    button.glide__arrow.glide__arrow--left(data-glide-dir='<', aria-label='Previous Slice')
+                        include ../../svg/left-arrow.pug
+                    button.glide__arrow.glide__arrow--right(data-glide-dir='>', aria-label='Next Slide')
+                        include ../../svg/right-arrow.pug
+                .glide__bullets(data-glide-el='controls[nav]')
+                    each cardItem, index in props.cards
+                        -
+                            var slideIndex = '=' + index;
+                            var slideNum = index + 1;
+                            var label = 'go to slide number ' + slideNum;
+                        button.glide__bullet.glide__bullet--purple(data-glide-dir=slideIndex, aria-label=label)= slideNum

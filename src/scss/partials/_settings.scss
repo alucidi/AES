@@ -1,0 +1,59 @@
+// Colors
+$colors: (
+    blue: #007EAF,
+    green: #68BF49,
+    purple: #902F80,
+    orange: #F8901F,
+    white: #FFFFFF,
+    black: #000000,
+    text: #3B3F40,
+    light-text: #767B7C,
+    dark-gray: #3B3F40,
+    light-gray: #F2F2F2,
+    red: #FF0000,
+);
+
+$breakpoints: (
+    xxs: 375px,
+    xs: 480px,
+    sm: 768px,
+    md: 1024px,
+    lg: 1280px,
+    xl: 1440px,
+    xxl: 1680px,
+    xxxl: 1920px
+);
+
+// Font Imports
+$font-imports: (
+    'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Ubuntu:wght@400;700&display=swap'
+);
+
+// Fonts
+$font-family--heading: 'Ubuntu', sans-serif;
+$font-family--primary: 'Open Sans', sans-serif;
+
+$container: (
+    'gutter': (default: 20px, xxs: 20px, sm: 20px),
+    'container-small-gutter': (default: 20px, sm: 40px, lg: 0),
+    'container-small-width': (default: 100%, md:875px, lg: 1080px),
+    'width': (default: 100%, md: 875px, lg: 1140px, xl: 1320px)
+);
+
+// Gradients
+$gradients: (
+    blue-bg-gradient: 'linear-gradient(180deg, #007EAF 0%, rgba(0, 126, 175, 0.6) 100%)',
+    purple-bg-gradient: 'linear-gradient(180deg, #902F80 0%, rgba(144, 47, 128, 0.7) 100%)',
+    blue-button-gradient: 'linear-gradient(90deg, #1E9CCD 0%, #0A7EAF 100.1%)',
+    purple-button-gradient: 'linear-gradient(90deg, #AE4D9E 0%, #7C1B6C 100.09%)'
+);
+
+// Shadow Styles
+$shadows: (
+    header: '0px 2px 18px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.2)'
+);
+
+// Z-index
+$zindex: (
+    header: 10
+);

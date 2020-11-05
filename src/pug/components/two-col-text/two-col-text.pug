@@ -1,0 +1,13 @@
+mixin twoColText(props = {})
+    -
+        var col1 = props.col1 ? props.col1 : 'Allsup Employment Services is a nationwide Employment Network authorized by the Social Security Administration to assist you with the Ticket to Work (TTW) program. We offer expert guidance designed to help you gain more from SSDI and from life.';
+        var col2 = props.col2 ? props.col2 : 'AES has helped thousands of people like you get back to work and earn an income again. We help you prepare to re-enter the job market, navigate the rules and paperwork, suspend future Continuing Disability Reviews, and most importantly, protect your Social Security and Medicare benefits when you go back to work.'
+
+    section.two-col-text
+        .container--small
+            .two-col-text__divider
+            .two-col-text__inner
+                .two-col-text__col
+                    p !{col1}
+                .two-col-text__col
+                    p !{col2}

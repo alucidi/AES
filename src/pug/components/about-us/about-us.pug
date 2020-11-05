@@ -1,0 +1,14 @@
+mixin aboutUs(props={})
+    section.about-us
+        .container.about-us__container
+            .about-us__inner
+                .about-us__info
+                    h2.about-us__header About Us
+                    .about-us__copy
+                        p At Allsup Employment Services, we specialize in helping former workers with disabilities and believe SSDI beneficiaries deserve the chance to find fulfilling employment again. 
+                    .about-us__copy
+                        p A subsidiary of Allsup LLC, a nationwide SSDI representation organization for more than 35 years, we understand how to work with the Social Security Administration, and we are very aware of how a medical condition can create shockwaves across all aspects of your life; not just work. Our purpose and passion is helping those with disabilities reclaim their lives.
+                .about-us__image
+                    .about-us__image__wrapper
+                        if props.image
+                            img.lazyload(width='624' height='441' data-src=props.image alt=props.imageAlt)

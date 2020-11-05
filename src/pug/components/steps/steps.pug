@@ -1,0 +1,42 @@
+include ../button/button.pug
+include ../card/card.pug
+
+mixin steps(props = {})
+    section.steps
+        .container--small
+            .steps__top
+                .steps__logo
+                    picture
+                        source(data-srcset=props.logo + '.webp' type='image/webp')
+                        source(data-srcset=props.logo + '.png' type='image/png')
+                        img.lazyload(width='242', height='91', data-src=props.logo + '.png', alt='Ticket to Work Logo')
+                .steps__copy
+                    h2.steps__heading!= props.heading
+                    .steps__summary!= props.summary
+            .steps__cards.glide
+                .glide__track(data-glide-el='track')
+                    ul.glide__slides
+                        each cardItem, index in props.cards
+                            -
+                                cardItem.index = index + 1;
+                            //- li.glide__slide
+                            +card(cardItem)
+                .glide__arrows(data-glide-el='controls')
+                    button.glide__arrow.glide__arrow--left(data-glide-dir='<', aria-label='Previous Slice')
+                        include ../../svg/left-arrow.pug
+                    button.glide__arrow.glide__arrow--right(data-glide-dir='>', aria-label='Next Slide')
+                        include ../../svg/right-arrow.pug
+                .glide__bullets(data-glide-el='controls[nav]')
+                    each cardItem, index in props.cards
+                        -
+                            var slideIndex = '=' + index;
+                            var slideNum = index + 1;
+                            var label = 'go to slide number ' + slideNum;
+                        button.glide__bullet(data-glide-dir=slideIndex, aria-label=label)= slideNum
+            .steps__bottom-copy!= props.bottomCopy
+            .steps__phone
+                +button({
+                    color: 'purple',
+                    showHours: true,
+                    showRequestCall: true
+                })

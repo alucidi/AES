@@ -1,0 +1,32 @@
+include ../components/skip-navigation/skip-navigation.pug
+block vars
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, shrink-to-fit=no")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        include ./favicon.pug
+        title #{title}
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://connect.facebook.net')
+        link(rel='preconnect' href='https://www.googletagmanager.com')
+        //- Google Tag Manager
+        script.
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KKW8FVW');
+        block head
+    body
+        //- Google Tag Manager (noscript)
+        noscript
+            iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-KKW8FVW' height='0' width='0' style='display:none;visibility:hidden')
+        +skipNav({id:'#main-content', copy:'Skip to Main Content'})
+        block header
+        main#main-content
+            block content
+        block footer
+        script(src='./js/main.js' defer)
+        block scripts

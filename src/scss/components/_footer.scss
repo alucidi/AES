@@ -1,0 +1,112 @@
+// Footer Styles
+.footer {
+    background-color: color(dark-gray);
+    padding: 40px 0;
+
+    @include bp(sm) {
+        padding: 50px 0;
+    }
+
+    @include bp(lg) {
+        padding: 66px 0 80px;
+    }
+
+    &__top-section {
+        @include bp(sm) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__phone {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+
+        @include bp(sm) {
+            order: 2;
+            margin: 0;
+        }
+
+        .btn__hours {
+            color: color(white);
+
+            @include bp(sm) {
+                max-width: 300px;
+            }
+
+            @include bp(lg) {
+                margin-right: 20px;
+                font-size: rem(16);
+                line-height: 120%;
+            }
+        }
+
+        .btn__request-call {
+            color: color(white);
+        }
+
+        &--no-request-call {
+            max-width: 245px;
+
+            .btn__container {
+                margin: 0 0 0 auto;
+            }
+
+            .btn__hours {
+                margin-right: 20px;
+                text-align: right;
+            }
+        }
+    }
+
+    &__logo {
+        margin: 40px;
+        text-align: center;
+
+        @include bp(sm) {
+            margin: 0;
+            order: 1;
+        }
+
+        svg {
+            width: 219px;
+            height: auto;
+
+            @include bp(sm) {
+                width: 279px;
+            }
+
+            @include bp(lg) {
+                width: 342px;
+            }
+        }
+    }
+
+    &__copyright,
+    &__copyright a {
+        font-family: $font-family--heading;
+        font-weight: bold;
+        font-size: rem(13);
+        line-height: 130%;
+        color: color(white);
+        text-decoration: none;
+    }
+
+    &__copyright {
+        width: 100%;
+        max-width: 500px;
+        margin: 50px auto 0;
+        text-align: center;
+
+        @include bp(sm) {
+            margin: 40px auto 0;
+        }
+
+        @include bp(lg) {
+            margin: 70px 0 0 0;
+            max-width: none;
+            text-align: left;
+        }
+    }
+}

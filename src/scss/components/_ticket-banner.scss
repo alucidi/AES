@@ -1,0 +1,86 @@
+.ticket-banner {
+    margin: 90px 0;
+
+    &__header {
+        margin-bottom: 24px;
+
+        @include bp(sm) {
+            margin-bottom: 32px;
+        }
+    }
+
+    &__container {
+        background-color: color(white);
+        border-radius: 10px;
+
+        @include bp(sm) {
+            width: calc(100vw - 80px);
+        }
+
+        @include bp(md) {
+            width: 875px;
+        }
+
+        @include bp(lg) {
+            width: 1080px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0;
+
+        @include bp(sm) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        @include bp(lg) {
+            padding: 44px 78px;
+        }
+    }
+
+    &__image {
+        margin-bottom: 48px;
+
+        @include bp(sm) {
+            margin-bottom: 0;
+        }
+
+        picture {
+            width: 100%;
+
+            img {
+                max-width: 100%;
+                width: 218px;
+                height: auto;
+
+                @include bp(lg) {
+                    width: 314px;
+                }
+            }
+        }
+    }
+
+    &__info {
+        @include bp(lg) {
+            font-size: rem(20);
+            line-height: 28px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    &__copy {
+        max-width: 335px;
+
+        @include bp(lg) {
+            max-width: 522px;
+        }
+    }
+}

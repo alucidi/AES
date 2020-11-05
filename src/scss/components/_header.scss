@@ -1,0 +1,60 @@
+// Header Styles
+.header {
+    background-color: color(white);
+    box-shadow: shadow(header);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: zindex(header);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+
+        @include bp(sm) {
+            height: 115px;
+        }
+    }
+
+    &__logo {
+        svg {
+            width: 183px;
+            height: auto;
+
+            @include bp(sm) {
+                width: 275px;
+            }
+
+            @include bp(lg) {
+                width: 338px;
+            }
+        }
+    }
+
+    &__phone {
+        .btn {
+            @include bp(max-width xs) {
+                font-size: rem(16);
+            }
+        }
+
+        .btn__hours {
+            font-size: rem(10);
+            max-width: 245px;
+
+            @include bp(lg) {
+                font-size: rem(12);
+                text-align: right;
+                margin-right: 20px;
+            }
+        }
+
+        .btn__request-call {
+            @include bp(max-width xs) {
+                display: none;
+            }
+        }
+    }
+}
